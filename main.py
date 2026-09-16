@@ -104,7 +104,7 @@ async def generate_qcm(file: UploadFile = File(...), count: int = Form(5)):
         contents_payload.append(prompt_instructions)
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.1-flash-lite',
             contents=contents_payload,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
@@ -154,7 +154,7 @@ async def generate_flashcards(file: UploadFile = File(...), count: int = Form(5)
         contents_payload.append(prompt_instructions)
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.1-flash-lite',
             contents=contents_payload,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
@@ -204,7 +204,7 @@ async def generate_summary(file: UploadFile = File(...), count: int = Form(5)):
         contents_payload.append(prompt_instructions)
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.1-flash-lite',
             contents=contents_payload,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
@@ -255,7 +255,7 @@ async def generate_true_false(file: UploadFile = File(...), count: int = Form(5)
         contents_payload.append(prompt_instructions)
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.1-flash-lite',
             contents=contents_payload,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
