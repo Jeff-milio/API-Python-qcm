@@ -274,6 +274,12 @@ async def generate_true_false(file: UploadFile = File(...), count: int = Form(5)
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Erreur interne Vrai/Faux : {str(e)}")
 
+# --- ENDPOINT RACINE ---
+@app.get("/")
+def read_root():
+    return {"status": "online", "message": "API MentorMe Python opérationnelle"}
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
